@@ -11,16 +11,21 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     font-size: 0.9rem;
+    display: grid;
+    place-items: center;
 }
 
 .container {
-    min-width: 100vw;
-    min-height: 100vh;
+    max-width: 60%;
     display: grid;
-    grid-template-columns: repeat(3, 300px);
-    grid-template-rows: 450px;
-    justify-content: center;
-    align-content: center;
+    grid-template-columns: repeat(3, 1fr);    
+}
+
+@media all and (max-width: 375px) {
+    .container {
+        max-width: 80%;
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 section {
@@ -125,10 +130,7 @@ section button {
 
 @media all and (max-width: 375px) {
 
-    .container {
-        grid-template-columns: 300px;
-        grid-template-rows: repeat(3, 410px);
-    }
+    
 
     .sedan {
         border-radius: 0.5rem 0.5rem 0 0;
